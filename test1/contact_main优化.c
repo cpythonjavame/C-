@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-#include "contact.h"
+#include "contact浼樺寲.h"
 
 int main()
 {
@@ -10,13 +10,13 @@ int main()
 	do
 	{
 		menu();
-		printf("请输入你选择的操作：\n");
+		printf("璇疯緭鍏ヤ綘閫夋嫨鐨勬搷浣滐細\n");
 		scanf("%d", &input);
 		switch (input)
 		{
 		case 0:
 			Savecontact(&t);
-			printf("退出通讯录\n");
+			printf("閫�鍑洪�氳褰昞n");
 			exit(0);
 		case 1:
 			Addcontact(&t);
@@ -37,7 +37,7 @@ int main()
 			print(&t);
 			break;
 		default:
-			printf("选择错误，请重新选择\n");
+			printf("閫夋嫨閿欒锛岃閲嶆柊閫夋嫨\n");
 			break;
 		}
 	} while (input);
