@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include "contact.h"
+#include "contactä¼˜åŒ–.h"
 
 void menu()
 {
 	printf("*****************************\n");
-	printf("*****1.Ìí¼Ó        2.É¾³ı*****\n");
-	printf("*****3.²éÕÒ        4.ĞŞ¸Ä*****\n");
-	printf("*****5.ÅÅĞò        6.´òÓ¡*****\n");
-	printf("*****0.ÍË³ö        ***********\n");
+	printf("*****1.æ·»åŠ         2.åˆ é™¤*****\n");
+	printf("*****3.æŸ¥æ‰¾        4.ä¿®æ”¹*****\n");
+	printf("*****5.æ’åº        6.æ‰“å°*****\n");
+	printf("*****0.é€€å‡º        ***********\n");
 	printf("*****************************\n");
 }
 
@@ -22,19 +22,19 @@ void Addcontact(text* p)
 {
 	if (p->sz == MAX)
 	{
-		printf("Í¨Ñ¶Â¼ÒÑÂú\n");
+		printf("é€šè®¯å½•å·²æ»¡\n");
 	}
 	else
 	{
-		printf("ÇëÊäÈëĞÕÃû£º\n");
+		printf("è¯·è¾“å…¥å§“åï¼š\n");
 		scanf("%s", (*p).data[p->sz].name);
-		printf("ÇëÊäÈëÄêÁä£º\n");
+		printf("è¯·è¾“å…¥å¹´é¾„ï¼š\n");
 		scanf("%d", &((*p).data[p->sz].age));
-		printf("ÇëÊäÈëĞÔ±ğ£º\n");
+		printf("è¯·è¾“å…¥æ€§åˆ«ï¼š\n");
 		scanf("%s", (*p).data[p->sz].sex);
-		printf("ÇëÊäÈëµç»°£º\n");
+		printf("è¯·è¾“å…¥ç”µè¯ï¼š\n");
 		scanf("%s", (*p).data[p->sz].tel);
-		printf("ÇëÊäÈëµØÖ·£º\n");
+		printf("è¯·è¾“å…¥åœ°å€ï¼š\n");
 		scanf("%s", (*p).data[p->sz].addr);
 		p->sz++;
 	}
@@ -44,7 +44,7 @@ void Delcontact(text* p)
 {
 	if (p->sz == 0)
 	{
-		printf("Í¨Ñ¶Â¼Îª0£¬ÎŞĞèÉ¾¼õ\n");
+		printf("é€šè®¯å½•ä¸º0ï¼Œæ— éœ€åˆ å‡\n");
 	}
 	else
 	{
@@ -55,22 +55,22 @@ void Delcontact(text* p)
 			for (i = flag; i < p->sz; i++)
 			{
 				p->data[i] = p->data[i + 1];
-				printf("É¾³ı³É¹¦\n");
+				printf("åˆ é™¤æˆåŠŸ\n");
 			}
 			p->sz--;
 		}
 		else
-			printf("Î´²éÑ¯µ½´ËÈË\n");
+			printf("æœªæŸ¥è¯¢åˆ°æ­¤äºº\n");
 	}
 }
 
 int find(text* p)
 {
 	char name[15] = { 0 };
-	printf("ÇëÊäÈëĞÕÃû£º\n");
+	printf("è¯·è¾“å…¥å§“åï¼š\n");
 	char tel[20] = { 0 };
 	scanf("%s", name);
-	printf("ÇëÊäÈëµç»°£º\n");
+	printf("è¯·è¾“å…¥ç”µè¯ï¼š\n");
 	scanf("%s", tel);
 	int i = 0;
 	int flag = -1;
@@ -94,7 +94,7 @@ void Seacontact(text* p)
 	}
 	else
 	{
-		printf("²éÎŞ´ËÈË\n");
+		printf("æŸ¥æ— æ­¤äºº\n");
 	}
 }
 
@@ -103,20 +103,20 @@ void Modcontact(text* p)
 	int i = find(p);
 	if (i >= 0)
 	{
-		printf("ÇëÊäÈëĞŞ¸ÄºóĞÕÃû£º\n");
+		printf("è¯·è¾“å…¥ä¿®æ”¹åå§“åï¼š\n");
 		scanf("%s", (*p).data[i].name);
-		printf("ÇëÊäÈëĞŞ¸ÄºóÄêÁä£º\n");
+		printf("è¯·è¾“å…¥ä¿®æ”¹åå¹´é¾„ï¼š\n");
 		scanf("%d", &((*p).data[i].age));
-		printf("ÇëÊäÈëĞŞ¸ÄºóĞÔ±ğ£º\n");
+		printf("è¯·è¾“å…¥ä¿®æ”¹åæ€§åˆ«ï¼š\n");
 		scanf("%s", (*p).data[i].sex);
-		printf("ÇëÊäÈëĞŞ¸Äºóµç»°£º\n");
+		printf("è¯·è¾“å…¥ä¿®æ”¹åç”µè¯ï¼š\n");
 		scanf("%s", (*p).data[i].tel);
-		printf("ÇëÊäÈëĞŞ¸ÄºóµØÖ·£º\n");
+		printf("è¯·è¾“å…¥ä¿®æ”¹ååœ°å€ï¼š\n");
 		scanf("%s", (*p).data[i].addr);
 	}
 	else
 	{
-		printf("²éÎŞ´ËÈË\n");
+		printf("æŸ¥æ— æ­¤äºº\n");
 	}
 }
 
@@ -140,12 +140,12 @@ void Sortcontact(text* p)
 		if (flag)
 			break;
 	}
-	printf("°´ĞÕÃûÊ××ÖÄ¸ÅÅĞòÍê³É\n");
+	printf("æŒ‰å§“åé¦–å­—æ¯æ’åºå®Œæˆ\n");
 }
 
 void print(text* p)
 {
-	printf("%-15s\t %-5s\t %-8s\t %-11s\t %-15s\n", "ĞÕÃû", "ÄêÁä", "ĞÔ±ğ", "µç»°", "µØÖ·");
+	printf("%-15s\t %-5s\t %-8s\t %-11s\t %-15s\n", "å§“å", "å¹´é¾„", "æ€§åˆ«", "ç”µè¯", "åœ°å€");
 	int i = 0;
 	for (i = 0; i < p->sz; i++)
 	{
